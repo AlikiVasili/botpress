@@ -24,7 +24,7 @@ spec:
         - env:
             - name: EXTERNAL_URL
               value: http://0.0.0.0:3000
-          image: botpress/server
+          image: botpress/server:v12_30_7
           name: botpress-server
           ports:
             - containerPort: 3000
