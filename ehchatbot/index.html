@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Patient Summary and E-Prescription Chatbot</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="bot.png">
+            <h1>Patient Summary and e-Prescription Chatbot</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testUsers">Test Users</a></li>
+                <li><a href="#instructions">Instructions</a></li>
+                <li><a href="#chatbot">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>This is the test enviroment for patient summary and e-Prescription chatbot! The built-in chatbot is a
+                proposal update for an already developed
+                application that provides patient summary and e-prescribing information quick and easy.</p>
+            <p>Patient Summary and e-Prescription are medical documents that include personal
+                medical data, and are part of a person's medical history. They are primarily used in the event
+                of an unexpected or unplanned medical condition to enable healthcare professionals access
+                important medical information.
+            </p>
+            <p>
+                In order to test the chatbot before add it to the application, a test database was created to hold test
+                users informations. If you want to try the chatbot you can use a test patient id to log-in and see what
+                is inside its personal patient summary and e-Prescription.
+
+            </p>
+        </section>
+        <section id="testUsers">
+            <h2>Test Users Ids</h2>
+            <li>Maria Antoniou: 10101122</li>
+            <li>Antonis Nikou: 12030102</li>
+            <li>Antrea Antreou: 1010101</li>
+        </section>
+        <section id="instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Reset Conversation from the button at the header of the chatbot (on your left).
+                    If you want instead of reset the conversation you can create a new conversation by go to the 3 lines
+                    menu at your left and press +</li>
+                <li>Write "hi" or other hello message to the chatbot.</li>
+                <li>You are set to go. To understant how you can continue in the converstation follow the guidlines of
+                    the chatbot. If you need help just ask the chatbot by type "Help".</li>
+            </ol>
+        </section>
+        <section id="chatbot">
+            <h2>Chat with our chatbot!</h2>
+            <!--<a
+                href="https://botpress.ucycodehub.eu/lite/mychatbot/?m=channel-web&v=Fullscreen&options=%7B%22hideWidget%22:true,%22config%22:%7B%22enableReset%22:true,%22enableTranscriptDownload%22:true%7D%7D">
+                Click here to go to the chatbot test enviroment</a>-->
+            <iframe
+                src="https://botpress.ucycodehub.eu/lite/mychatbot/?m=channel-web&v=Fullscreen&options=%7B%22hideWidget%22:true,%22config%22:%7B%22enableReset%22:true,%22enableTranscriptDownload%22:true%7D%7D"
+                width="800" height="500" frameborder="0" sandbox>
+            </iframe>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Patient Summary and E-Prescription Chatbot. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
