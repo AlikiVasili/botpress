@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myWebsite
+  name: myWebsite
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myWebsite
+  selector:
+    matchLabels:
+      app: myWebsite
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: myWebsite
+    spec:
+      containers:
+        - env:
+          - name: EXTERNAL_URL
+            value: http://0.0.0.0:3000
+          image: html-server-image:v1
+          name: html-server
+          ports:
+            - containerPort: 3000
+          resources: {}
+          volumeMounts:
+            - mountPath: /myWebsite/data
+              name: myWebsite-data
+      volumes:
+        - name: myWebsite-data
+          persistentVolumeClaim:
+            claimName: myWebsite-data
