@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ehchatbot
+  name: ehchatbot
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ehchatbot
+  selector:
+    matchLabels:
+      app: ehchatbot
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ehchatbot
+    spec:
+      containers:
+        - env:
+          - name: EXTERNAL_URL
+            value: http://0.0.0.0:3000
+          image: avasil08/eh-chatbot:ehchatbot-server
+          name: html-server
+          ports:
+            - containerPort: 3000
