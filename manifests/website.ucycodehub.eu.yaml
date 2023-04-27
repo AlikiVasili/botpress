@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: website-web
-  namespace: website
+  namespace: botpress
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
@@ -17,8 +17,6 @@ metadata:
       more_set_headers "X-Xss-Protection: 1; mode=block";
       more_set_headers "X-Content-Type-Options: nosniff";
       more_set_headers "Referrer-Policy: strict-origin-when-cross-origin";
-      add_header X-Frame-Options "ALLOW-FROM ucycodehub.eu";
-      add_header Content-Security-Policy "frame-ancestors ucycodehub.eu";
 
     #nginx.ingress.kubernetes.io/rewrite-target: /$1
     cert-manager.io/cluster-issuer: "letsencrypt-production"
@@ -28,16 +26,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - website.ucycodehub.eu
-    secretName: website-tls
+    - ehchatbot.ucycodehub.eu
+    secretName: ehchatbot-tls
   rules:
-  - host: website.ucycodehub.eu
+  - host: ehchatbot.ucycodehub.eu
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: website-web
+            name: ehchatbot-web
             port:
               number: 3000
