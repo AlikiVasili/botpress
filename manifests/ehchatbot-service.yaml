@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ehchatbot
+  namespace: botpress
+  labels:
+    app: ehchatbot
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app: ehchatbot
