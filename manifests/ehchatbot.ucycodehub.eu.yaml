@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: website-web
+  name: ehchatbot
   namespace: botpress
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
@@ -36,6 +36,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ehchatbot-web
+            name: ehchatbot
             port:
               number: 3000
