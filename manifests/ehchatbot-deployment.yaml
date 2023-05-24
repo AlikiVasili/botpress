@@ -24,7 +24,7 @@ spec:
         - env:
           - name: EXTERNAL_URL
             value: http://0.0.0.0:80
-          image: avasil08/eh-chatbot:ehchatbot-server.v7
+          image: avasil08/eh-chatbot:ehchatbot-server.v9
           name: html-server
           ports:
             - containerPort: 80
